@@ -1,0 +1,47 @@
+@use "_variables.scss" as vars;
+
+.header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  .logo-desktop {
+    display: none;
+  }
+  .header-navigation {
+    display: flex;
+    align-items: center;
+    a {
+      color: vars.$primary-color;
+      text-decoration: none;
+      font-size: 1rem;
+      text-transform: uppercase;
+      &.active {
+        text-decoration: underline;
+      }
+      &:nth-child(1) {
+        margin: 0 20px 0 5px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    padding: 45px 60px;
+    .logo-desktop {
+      display: block;
+    }
+    .logo-mobile {
+      display: none;
+    }
+    .header-navigation {
+      a {
+        font-size: 2rem;
+        text-transform: none;
+        &:nth-child(1) {
+          margin-right: 60px;
+        }
+      }
+    }
+  }
+}

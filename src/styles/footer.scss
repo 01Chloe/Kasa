@@ -1,0 +1,29 @@
+.footer {
+  background-color: #000;
+  text-align: center;
+  padding: 60px;
+  color: #fff;
+  img {
+    margin-bottom: 15px;
+  }
+  .footer-parag {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer {
+    padding: 60px 0 20px;
+    img {
+      margin-bottom: 30px;
+    }
+    .footer-parag {
+      flex-direction: row;
+      p {
+        font-size: 2rem;
+      }
+    }
+  }
+}

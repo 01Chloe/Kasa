@@ -1,0 +1,15 @@
+@use "_variables.scss" as vars;
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 12px;
+}
+
+body {
+  font-family: vars.$fontFam;
+  font-weight: 500;
+}
