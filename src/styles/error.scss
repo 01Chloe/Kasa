@@ -1,19 +1,35 @@
 @use "_variables.scss" as vars;
 
 .error {
-  text-align: center;
   color: vars.$primary-color;
+  text-align: center;
   .error-title {
-    font-size: 24rem;
+    margin-top: 100px;
+    font-size: 8rem;
     font-weight: 700;
   }
   .error-parag {
-    font-size: 3rem;
-    margin: 100px 0;
+    font-size: 1.5rem;
+    margin: 100px 20px;
   }
   .error-link {
     display: inline-block;
     margin-bottom: 100px;
     color: vars.$primary-color;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .error {
+    .error-title {
+      font-size: 24rem;
+    }
+    .error-parag {
+      font-size: 3rem;
+      margin: 100px 60px;
+    }
+    .error-link {
+      font-size: 1.5rem;
+    }
   }
 }

@@ -1,0 +1,57 @@
+@mixin banner {
+  position: relative;
+  margin: 0 20px 20px;
+}
+
+@mixin bannerImg {
+  width: 100%;
+  height: 115px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+@mixin bannerOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 115px;
+  border-radius: 10px;
+}
+
+@mixin sizeImage {
+  width: 100%;
+  height: 255px;
+  border-radius: 10px;
+}
+
+@mixin flexRowCenter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin collapseTitle {
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1.08rem;
+}
+
+@mixin collapseArrow {
+  cursor: pointer;
+  transition: transform 0.3s ease-out;
+  transform-origin: center;
+}
+
+@mixin collapseContent {
+  position: relative;
+  top: -6px;
+  z-index: -1;
+  border-radius: 5px;
+  padding: 15px;
+  transform: translateY(-30px);
+  opacity: 0;
+  height: 0;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}

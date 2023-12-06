@@ -1,0 +1,63 @@
+@use "./variables.scss" as vars;
+@use "_mixins.scss" as mixin;
+
+.carousel-content {
+  position: relative;
+  margin: 20px;
+  .images-container {
+    .appart-detail-img {
+      @include mixin.sizeImage;
+      object-fit: cover;
+    }
+    .image-counter {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: vars.$very-light-color;
+      font-size: 1.5rem;
+      display: none;
+    }
+  }
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    cursor: pointer;
+  }
+  .arrow-left {
+    left: 6px;
+  }
+  .arrow-right {
+    right: 6px;
+  }
+}
+.hidden {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .carousel-content {
+    margin: 0 60px 30px;
+    .arrow {
+      width: 45px;
+      height: 80px;
+    }
+    .arrow-left {
+      left: 25px;
+    }
+    .arrow-right {
+      right: 25px;
+    }
+    .images-container {
+      .appart-detail-img {
+        height: 415px;
+        border-radius: 25px;
+      }
+      .image-counter {
+        display: block;
+      }
+    }
+  }
+}

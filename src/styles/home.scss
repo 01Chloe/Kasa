@@ -1,54 +1,80 @@
 @use "_variables.scss" as vars;
+@use "_mixins.scss" as mixin;
 
 .home-banner {
-  position: relative;
-  padding: 0 20px 20px;
+  @include mixin.banner;
   .home-banner-img {
-    width: 100%;
-    height: 111px;
-    border-radius: 10px;
-    object-fit: cover;
+    @include mixin.bannerImg;
   }
   .home-banner-overlay {
-    position: absolute;
-    top: 0;
-    left: 20px;
-    width: calc(100% - 40px);
-    height: 111px;
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.3);
+    @include mixin.bannerOverlay;
+    background-color: vars.$overlay-color;
   }
   .home-banner-title {
-    color: #fff;
-    font-size: 2rem;
+    color: vars.$very-light-color;
+    font-size: 1.5rem;
     position: absolute;
-    top: 30px;
-    left: 35px;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
     font-weight: 400;
+  }
+}
+.home-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px 10px;
+}
+
+@media screen and (min-width: 576px) {
+  .home-banner {
+    .home-banner-title {
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2rem;
+    }
+  }
+  .home-content {
+    background-color: vars.$light-color;
+    border-radius: 25px;
+    margin: 40px 20px 50px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .home-banner {
-    padding: 0 60px;
+    margin: 0 60px;
     .home-banner-img {
-      height: 223px;
+      height: 225px;
       border-radius: 25px;
     }
     .home-banner-overlay {
-      width: calc(100% - 120px);
-      height: 223px;
-      left: 60px;
+      width: 100%;
+      height: 225px;
+      left: 0;
       border-radius: 25px;
     }
     .home-banner-title {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 4rem;
+      font-size: 3.5rem;
       .home-title-break {
         display: none;
       }
     }
+  }
+  .home-content {
+    margin: 40px 60px 50px;
+    padding: 50px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .home-content {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

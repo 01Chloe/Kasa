@@ -1,4 +1,6 @@
 import HomeBannerImg from "../assests/accueil-img.png"
+import AppartmentCard from "../components/AppartmentCard"
+import { appartmentsList } from "../datas/data"
 import "../styles/home.scss"
 
 export default function Home() {
@@ -16,6 +18,11 @@ export default function Home() {
           <br className="home-title-break" />
           partout et ailleurs
         </h1>
+      </div>
+      <div className="home-content">
+        {appartmentsList.map((item) => (
+          <AppartmentCard key={item.id} item={item} />
+        ))}
       </div>
     </>
   )

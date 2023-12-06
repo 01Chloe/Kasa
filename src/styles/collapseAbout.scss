@@ -1,0 +1,62 @@
+@use "./variables.scss" as vars;
+@use "_mixins.scss" as mixin;
+
+.about-collapses-container {
+  margin: 20px;
+  .collapse-container {
+    .collapse-title {
+      @include mixin.flexRowCenter;
+      @include mixin.collapseTitle;
+      background-color: vars.$primary-color;
+      color: vars.$very-light-color;
+      .arrow-back {
+        @include mixin.collapseArrow;
+      }
+      .arrow-top {
+        transition: transform 0.3s ease-out;
+        transform: rotate(180deg);
+      }
+    }
+    .collapse-content {
+      @include mixin.collapseContent;
+      background-color: vars.$light-color;
+      color: vars.$primary-color;
+      &.collapse-visible {
+        opacity: 1;
+        transform: translateY(0);
+        height: auto;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .about-collapses-container {
+    margin: 25px 60px 50px;
+    display: flex;
+    flex-direction: column;
+    .collapse-container {
+      .collapse-title {
+        padding: 10px 15px;
+        font-size: 1.5rem;
+      }
+    }
+    .collapse-content {
+      font-size: 1.5rem;
+      &.collapse-visible {
+        margin-bottom: 25px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .about-collapses-container {
+    .collapse-container {
+      .collapse-title {
+        font-size: 2rem;
+      }
+    }
+  }
+}
