@@ -5,19 +5,28 @@ import { useState } from "react"
 
 export default function Carousel({ appartment }) {
   const [count, setCount] = useState(0)
+  const [slideAnimation, setSlideAnimation] = useState(false)
   const totalImages = appartment.pictures.length
 
   const decreaseCount = () => {
     setCount((prevCount) => (prevCount === 0 ? totalImages - 1 : prevCount - 1))
+    setSlideAnimation(!slideAnimation)
+    setTimeout(() => {
+      setSlideAnimation(false)
+    }, 300)
   }
 
   const increaseCount = () => {
     setCount((prevCount) => (prevCount === totalImages - 1 ? 0 : prevCount + 1))
+    setSlideAnimation(!slideAnimation)
+    setTimeout(() => {
+      setSlideAnimation(false)
+    }, 300)
   }
 
   return (
     <div className="carousel-content">
-      <div className="images-container">
+      <div className={`images-container ${slideAnimation ? "slide-anim" : ""}`}>
         <img
           src={appartment.pictures[count]}
           alt="Photos de l'appartement"

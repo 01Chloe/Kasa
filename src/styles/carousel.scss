@@ -1,10 +1,13 @@
-@use "./variables.scss" as vars;
+@use "./variables" as vars;
 @use "_mixins.scss" as mixin;
 
 .carousel-content {
   position: relative;
   margin: 20px;
   .images-container {
+    &.slide-anim {
+      animation: slideAnim 0.3s ease-out;
+    }
     .appart-detail-img {
       @include mixin.sizeImage;
       object-fit: cover;
@@ -36,7 +39,11 @@
 .hidden {
   display: none;
 }
-
+@keyframes slideAnim {
+  to {
+    opacity: 0.8;
+  }
+}
 @media screen and (min-width: 768px) {
   .carousel-content {
     margin: 0 60px 30px;
