@@ -1,5 +1,5 @@
-import arrowLeft from "../assests/arrow_left.svg"
-import arrowRight from "../assests/arrow_right.svg"
+import arrowLeft from "../assets/arrow_left.svg"
+import arrowRight from "../assets/arrow_right.svg"
 import "../styles/carousel.scss"
 import { useState } from "react"
 

@@ -1,4 +1,4 @@
-import ArrowBack from "../assests/arrow_back.png"
+import ArrowBack from "../assets/arrow_back.png"
 
 export default function Collapse({ title, content, isOpen, onToggle }) {
   return (

@@ -1,4 +1,4 @@
-import AboutBannerImg from "../assests/a-propos_img.png"
+import AboutBannerImg from "../assets/a-propos_img.png"
 import CollapseAbout from "../components/CollapseAbout"
 import "../styles/about.scss"
 

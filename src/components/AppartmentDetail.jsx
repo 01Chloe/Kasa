@@ -1,6 +1,6 @@
 import "../styles/appartmentDetail.scss"
-import RatingPink from "../assests/rating-pink.jpg"
-import RatingGrey from "../assests/rating-grey.jpg"
+import RatingPink from "../assets/rating-pink.jpg"
+import RatingGrey from "../assets/rating-grey.jpg"
 
 export default function AppartmentDetail({ appartment }) {
   const renderStars = (rating) => {

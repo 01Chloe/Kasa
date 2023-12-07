@@ -1,4 +1,4 @@
-import HomeBannerImg from "../assests/accueil-img.png"
+import HomeBannerImg from "../assets/accueil-img.png"
 import AppartmentCard from "../components/AppartmentCard"
 import { appartmentsList } from "../datas/data"
 import "../styles/home.scss"
