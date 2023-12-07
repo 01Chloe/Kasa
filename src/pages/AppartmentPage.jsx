@@ -1,8 +1,7 @@
-import Error from "./Error"
 import Carousel from "../components/Carousel"
 import AppartmentDetail from "../components/AppartmentDetail"
 import CollapseAppartment from "../components/CollapseAppartment"
-import { useParams } from "react-router-dom"
+import { Navigate, useParams } from "react-router-dom"
 import { appartmentsList } from "../datas/data"
 
 export default function AppartmentPage() {
@@ -11,7 +10,7 @@ export default function AppartmentPage() {
   const appartment = appartmentsList.find((appart) => appart.id === cleanId)
 
   if (!appartment) {
-    return <Error />
+    return <Navigate to="/erreur" />
   }
   return (
     <>

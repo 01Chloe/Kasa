@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route, Navigate } from "react-router-dom"
 import Home from "../pages/Home"
 import About from "../pages/About"
 import AppartmentPage from "../pages/AppartmentPage"
@@ -10,7 +10,8 @@ export default function Router() {
       <Route path="/" element={<Home />} />
       <Route path="/a-propos" element={<About />} />
       <Route path="/appartment/:id" element={<AppartmentPage />} />
-      <Route path="*" element={<Error />} />
+      <Route path="/erreur" element={<Error />} />
+      <Route path="/*" element={<Navigate to="/erreur" />} />
     </Routes>
   )
 }
