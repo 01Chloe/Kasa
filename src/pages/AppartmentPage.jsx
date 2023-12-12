@@ -1,20 +1,25 @@
-import Carousel from "../components/Carousel"
+import { useFetchData } from "../hookCustom/useFetchData"
+import Gallery from "../components/Gallery"
 import AppartmentDetail from "../components/AppartmentDetail"
 import CollapseAppartment from "../components/CollapseAppartment"
 import { Navigate, useParams } from "react-router-dom"
-import { appartmentsList } from "../datas/data"
 
 export default function AppartmentPage() {
+  const appartmentsList = useFetchData("/data.json")
+
   const { id } = useParams()
-  let cleanId = id.substring(1)
-  const appartment = appartmentsList.find((appart) => appart.id === cleanId)
+  const appartment = appartmentsList.find((appart) => appart.id === id)
+
+  if (!appartmentsList.length) {
+    return
+  }
 
   if (!appartment) {
     return <Navigate to="/erreur" />
   }
   return (
     <>
-      <Carousel appartment={appartment} />
+      <Gallery appartment={appartment} />
       <AppartmentDetail appartment={appartment} />
       <CollapseAppartment appartment={appartment} />
     </>

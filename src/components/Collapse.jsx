@@ -5,12 +5,14 @@ export default function Collapse({ title, content, isOpen, onToggle }) {
     <div className="collapse-container">
       <div className="collapse-title">
         <p>{title}</p>
-        <img
-          src={ArrowBack}
-          alt="Voir plus de détails"
-          className={`arrow-back ${isOpen ? "arrow-top" : ""}`}
-          onClick={onToggle}
-        />
+        <button className="collapse-btn">
+          <img
+            src={ArrowBack}
+            alt={isOpen ? "Voir moins" : "Voir plus de détails"}
+            className={`arrow-back ${isOpen ? "arrow-top" : ""}`}
+            onClick={onToggle}
+          />
+        </button>
       </div>
       <div className={`collapse-content ${isOpen ? "collapse-visible" : ""}`}>
         {content}

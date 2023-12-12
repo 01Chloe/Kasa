@@ -4,7 +4,7 @@ import "../styles/header.scss"
 
 export default function Header() {
   return (
-    <div className="header">
+    <header>
       <img src={Logo} alt="Logo Kasa" className="logo" />
       <nav className="header-navigation">
         <NavLink
@@ -24,6 +24,6 @@ export default function Header() {
           A Propos
         </NavLink>
       </nav>
-    </div>
+    </header>
   )
 }

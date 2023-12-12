@@ -9,12 +9,16 @@
       @include mixin.collapseTitle;
       background-color: vars.$primary-color;
       color: vars.$very-light-color;
-      .arrow-back {
-        @include mixin.collapseArrow;
-      }
-      .arrow-top {
-        transition: transform 0.3s ease-out;
-        transform: rotate(180deg);
+      .collapse-btn {
+        border: none;
+        background-color: transparent;
+        .arrow-back {
+          @include mixin.collapseArrow;
+        }
+        .arrow-top {
+          transition: transform 0.3s ease-out;
+          transform: rotate(180deg);
+        }
       }
     }
     .collapse-content {
@@ -31,19 +35,26 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: vars.$tablet) {
   .about-collapses-container {
-    margin: 25px 60px 50px;
+    margin: 40px 60px;
     display: flex;
     flex-direction: column;
     .collapse-container {
       .collapse-title {
         padding: 10px 15px;
         font-size: 1.5rem;
+        .collapse-btn {
+          .arrow-back {
+            width: 32px;
+            height: 32px;
+          }
+        }
       }
     }
     .collapse-content {
       font-size: 1.5rem;
+      padding: 30px 20px;
       &.collapse-visible {
         margin-bottom: 25px;
       }
@@ -51,7 +62,15 @@
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: vars.$desktop) {
+  .about-collapses-container {
+    .collapse-content {
+      padding: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: vars.$largeDesktop) {
   .about-collapses-container {
     .collapse-container {
       .collapse-title {

@@ -3,6 +3,18 @@
 
 .appartment-card-link {
   width: 100%;
+  position: relative;
+  &::after {
+    content: "";
+    @include mixin.sizeImage;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.6)
+    );
+  }
   .appartment-card-content {
     position: relative;
     width: 100%;
@@ -11,33 +23,20 @@
       @include mixin.sizeImage;
       object-fit: cover;
     }
-    .card-overlay {
-      @include mixin.sizeImage;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0),
-        rgba(0, 0, 0, 0.6)
-      );
-    }
     .card-title {
       position: absolute;
       left: 20px;
       bottom: 15px;
       color: vars.$very-light-color;
       font-size: 1.5rem;
+      z-index: 2;
     }
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: vars.$tablet) {
   .appartment-card-content {
     .appartment-card-image {
-      height: 340px;
-    }
-    .card-overlay {
       height: 340px;
     }
   }

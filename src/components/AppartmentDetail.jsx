@@ -3,6 +3,10 @@ import RatingPink from "../assets/rating-pink.jpg"
 import RatingGrey from "../assets/rating-grey.jpg"
 
 export default function AppartmentDetail({ appartment }) {
+  if (!appartment) {
+    return null
+  }
+
   const renderStars = (rating) => {
     const stars = []
     const totalStars = 5
@@ -14,7 +18,7 @@ export default function AppartmentDetail({ appartment }) {
         <img
           key={i}
           src={starImage}
-          alt={`Note ${i + 1} sur 5`}
+          alt={i < coloredStars ? "étoile rose" : "étoile grise"}
           className="star"
         />
       )
@@ -28,27 +32,42 @@ export default function AppartmentDetail({ appartment }) {
   return (
     <div className="appartment-details">
       <div className="appartment-infos-principal">
-        <h1 className="appartment-detail-title">{appartment.title}</h1>
-        <p className="appartment-detail-location">{appartment.location}</p>
-        <div className="appartment-detail-tags">
-          {appartment.tags.map((tag, index) => (
-            <div key={index} className="appartment-detail-tag">
-              {tag}
-            </div>
-          ))}
-        </div>
+        {appartment.title && (
+          <h1 className="appartment-detail-title">{appartment.title}</h1>
+        )}
+        {appartment.location && (
+          <p className="appartment-detail-location">{appartment.location}</p>
+        )}
+        {appartment.tags && (
+          <ul className="appartment-detail-tags">
+            {appartment.tags.map((tag, index) => (
+              <li key={index} className="appartment-detail-tag">
+                {tag}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
       <div className="appartment-infos-secondary">
-        <div className="appartment-rating">
-          {renderStars(appartment.rating)}
-        </div>
+        {appartment.rating && (
+          <div
+            className="appartment-rating"
+            aria-label={"Note de " + appartment.rating + "/5"}
+          >
+            {renderStars(appartment.rating)}
+          </div>
+        )}
         <div className="appartment-host">
-          <p className="host-name">{appartment.host.name}</p>
-          <img
-            src={appartment.host.picture}
-            alt={altText}
-            className="host-picture"
-          />
+          {appartment.host.name && (
+            <p className="host-name">{appartment.host.name}</p>
+          )}
+          {appartment.host.picture && (
+            <img
+              src={appartment.host.picture}
+              alt={altText}
+              className="host-picture"
+            />
+          )}
         </div>
       </div>
     </div>

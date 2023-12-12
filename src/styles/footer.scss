@@ -1,6 +1,6 @@
 @use "./variables" as vars;
 
-.footer {
+footer {
   background-color: #000;
   text-align: center;
   padding: 60px;
@@ -15,11 +15,11 @@
     align-items: center;
   }
 }
-@media screen and (min-width: 768px) {
-  .footer {
-    padding: 60px 0 20px;
+@media screen and (min-width: vars.$tablet) {
+  footer {
+    padding: 65px 0 30px;
     img {
-      margin-bottom: 30px;
+      margin-bottom: 45px;
     }
     .footer-parag {
       flex-direction: row;

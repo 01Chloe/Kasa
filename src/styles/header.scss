@@ -1,6 +1,6 @@
 @use "_variables.scss" as vars;
 
-.header {
+header {
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -14,7 +14,6 @@
     a {
       color: vars.$primary-color;
       text-decoration: none;
-      font-size: 1rem;
       text-transform: uppercase;
       &.active {
         text-decoration: underline;
@@ -26,8 +25,19 @@
   }
 }
 
-@media screen and (min-width: 768px) {
-  .header {
+@media screen and (min-width: vars.$mobile) {
+  header {
+    .header-navigation {
+      a {
+        font-size: 1.5rem;
+        text-transform: none;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: vars.$tablet) {
+  header {
     padding: 45px 60px;
     .logo {
       width: 210px;
@@ -36,7 +46,6 @@
     .header-navigation {
       a {
         font-size: 2rem;
-        text-transform: none;
         &:nth-child(1) {
           margin-right: 60px;
         }

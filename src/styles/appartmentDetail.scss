@@ -14,10 +14,11 @@
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
+      list-style-type: none;
       .appartment-detail-tag {
         background-color: vars.$primary-color;
         color: vars.$very-light-color;
-        font-size: 0.8rem;
+        font-size: calc(13px / vars.$fontSizeDefault) * 1rem;
         padding: 5px 10px;
         border-radius: 10px;
         margin: 10px 10px 0 0;
@@ -53,10 +54,10 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: vars.$tablet) {
   .appartment-details {
     @include mixin.flexRowCenter;
-    padding: 0 60px 50px;
+    padding: 0 60px;
     .appartment-infos-principal {
       width: 70%;
       .appartment-detail-title {
@@ -67,7 +68,7 @@
       }
       .appartment-detail-tags {
         .appartment-detail-tag {
-          font-size: 1.16rem;
+          font-size: calc(14px / vars.$fontSizeDefault) * 1rem;
           padding: 10px 25px;
         }
       }

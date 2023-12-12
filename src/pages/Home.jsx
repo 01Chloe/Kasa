@@ -1,24 +1,15 @@
-import HomeBannerImg from "../assets/accueil-img.png"
+import { useFetchData } from "../hookCustom/useFetchData"
+// import HomeBannerImg from "../assets/accueil-img.png"
+import Banner from "../components/Banner"
 import AppartmentCard from "../components/AppartmentCard"
-import { appartmentsList } from "../datas/data"
 import "../styles/home.scss"
 
 export default function Home() {
+  const appartmentsList = useFetchData("/data.json")
+
   return (
     <>
-      <div className="home-banner">
-        <img
-          src={HomeBannerImg}
-          alt="Océan et falaise"
-          className="home-banner-img"
-        />
-        <div className="home-banner-overlay"></div>
-        <h1 className="home-banner-title">
-          Chez vous,&nbsp;
-          <br className="home-title-break" />
-          partout et ailleurs
-        </h1>
-      </div>
+      <Banner isHome={true} />
       <div className="home-content">
         {appartmentsList.map((item) => (
           <AppartmentCard key={item.id} item={item} />

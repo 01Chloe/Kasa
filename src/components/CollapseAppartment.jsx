@@ -19,18 +19,14 @@ export default function CollapseAppartment({ appartment }) {
     <div className="appartment-collapses-container">
       <Collapse
         title="Description"
-        content={
-          <p className="collapse-content-parag">{appartment.description}</p>
-        }
+        content={<p>{appartment.description}</p>}
         isOpen={collapseState.description}
         onToggle={() => collapseToggle("description")}
       />
       <Collapse
         title="Équipements"
         content={appartment.equipments.map((equipment, index) => (
-          <p key={index} className="collapse-content-parag">
-            {equipment}
-          </p>
+          <p key={index}>{equipment}</p>
         ))}
         isOpen={collapseState.equipment}
         onToggle={() => collapseToggle("equipment")}

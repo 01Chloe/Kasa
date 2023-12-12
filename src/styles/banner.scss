@@ -1,0 +1,66 @@
+@use "_variables.scss" as vars;
+@use "_mixins.scss" as mixin;
+
+.banner {
+  @include mixin.banner;
+  &::after {
+    content: "";
+    @include mixin.bannerOverlay;
+    background-color: vars.$overlay-color;
+    z-index: -1;
+  }
+  .banner-img {
+    @include mixin.bannerImg;
+    position: relative;
+    z-index: -1;
+  }
+  .banner-title {
+    color: vars.$very-light-color;
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    font-weight: 400;
+  }
+}
+
+@media screen and (min-width: vars.$mobile) {
+  .banner {
+    .banner-title {
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2.5rem;
+    }
+  }
+}
+
+@media screen and (min-width: vars.$tablet) {
+  .banner {
+    margin: 0 60px;
+    &::after {
+      width: 100%;
+      height: 225px;
+      left: 0;
+      border-radius: 25px;
+    }
+    .banner-img {
+      height: 225px;
+      border-radius: 25px;
+    }
+    .banner-title {
+      font-size: 4rem;
+      .title-break {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: vars.$largeDesktop) {
+  .banner {
+    .banner-title {
+      font-size: 4rem;
+    }
+  }
+}

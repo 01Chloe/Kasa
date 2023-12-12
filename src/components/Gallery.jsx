@@ -1,9 +1,9 @@
 import arrowLeft from "../assets/arrow_left.svg"
 import arrowRight from "../assets/arrow_right.svg"
-import "../styles/carousel.scss"
+import "../styles/gallery.scss"
 import { useState } from "react"
 
-export default function Carousel({ appartment }) {
+export default function Gallery({ appartment }) {
   const [count, setCount] = useState(0)
   const [slideAnimation, setSlideAnimation] = useState(false)
   const totalImages = appartment.pictures.length
@@ -25,29 +25,43 @@ export default function Carousel({ appartment }) {
   }
 
   return (
-    <div className="carousel-content">
+    <div className="gallery-content">
       <div className={`images-container ${slideAnimation ? "slide-anim" : ""}`}>
         <img
           src={appartment.pictures[count]}
           alt="Photos de l'appartement"
           className="appart-detail-img"
         />
-        <p className={totalImages <= 1 ? "hidden" : "image-counter"}>
-          {count + 1}/{totalImages}
-        </p>
+        {totalImages > 1 && (
+          <p className="image-counter">
+            {count + 1}/{totalImages}
+          </p>
+        )}
       </div>
-      <img
-        src={arrowLeft}
-        alt="Défilement vers la gauche"
-        className={totalImages <= 1 ? "hidden" : "arrow arrow-left"}
-        onClick={decreaseCount}
-      />
-      <img
-        src={arrowRight}
-        alt="Défilement vers la droite"
-        className={totalImages <= 1 ? "hidden" : "arrow arrow-right"}
-        onClick={increaseCount}
-      />
+      {totalImages > 1 && (
+        <button
+          className="gallery-btn gallery-btn-left"
+          onClick={decreaseCount}
+        >
+          <img
+            src={arrowLeft}
+            alt="Défilement vers la gauche"
+            className="arrow arrow-left"
+          />
+        </button>
+      )}
+      {totalImages > 1 && (
+        <button
+          className="gallery-btn gallery-btn-right"
+          onClick={increaseCount}
+        >
+          <img
+            src={arrowRight}
+            alt="Défilement vers la droite"
+            className="arrow arrow-right"
+          />
+        </button>
+      )}
     </div>
   )
 }
