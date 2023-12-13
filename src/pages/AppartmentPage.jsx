@@ -1,7 +1,7 @@
 import { useFetchData } from "../hookCustom/useFetchData"
 import Gallery from "../components/Gallery"
 import AppartmentDetail from "../components/AppartmentDetail"
-import CollapseAppartment from "../components/CollapseAppartment"
+import Collapse from "../components/Collapse"
 import { Navigate, useParams } from "react-router-dom"
 
 export default function AppartmentPage() {
@@ -21,7 +21,7 @@ export default function AppartmentPage() {
     <>
       <Gallery appartment={appartment} />
       <AppartmentDetail appartment={appartment} />
-      <CollapseAppartment appartment={appartment} />
+      <Collapse isAppartment={true} appartment={appartment} />
     </>
   )
 }

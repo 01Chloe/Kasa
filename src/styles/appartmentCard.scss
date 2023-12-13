@@ -35,9 +35,17 @@
 }
 
 @media screen and (min-width: vars.$tablet) {
-  .appartment-card-content {
-    .appartment-card-image {
+  .appartment-card-link {
+    &::after {
       height: 340px;
+    }
+    .appartment-card-content {
+      .appartment-card-image {
+        height: 340px;
+      }
+      .card-title {
+        bottom: 20px;
+      }
     }
   }
 }

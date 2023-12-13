@@ -1,18 +1,25 @@
 @use "_variables.scss" as vars;
-@use "_mixins.scss" as mixin;
 
 .banner {
-  @include mixin.banner;
+  position: relative;
+  margin: 0 20px 20px;
   &::after {
     content: "";
-    @include mixin.bannerOverlay;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 115px;
+    border-radius: 10px;
     background-color: vars.$overlay-color;
     z-index: -1;
   }
   .banner-img {
-    @include mixin.bannerImg;
     position: relative;
     z-index: -1;
+    width: 100%;
+    height: 115px;
+    border-radius: 10px;
+    object-fit: cover;
   }
   .banner-title {
     color: vars.$very-light-color;
@@ -53,14 +60,6 @@
       .title-break {
         display: none;
       }
-    }
-  }
-}
-
-@media screen and (min-width: vars.$largeDesktop) {
-  .banner {
-    .banner-title {
-      font-size: 4rem;
     }
   }
 }

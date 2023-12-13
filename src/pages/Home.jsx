@@ -1,5 +1,4 @@
 import { useFetchData } from "../hookCustom/useFetchData"
-// import HomeBannerImg from "../assets/accueil-img.png"
 import Banner from "../components/Banner"
 import AppartmentCard from "../components/AppartmentCard"
 import "../styles/home.scss"

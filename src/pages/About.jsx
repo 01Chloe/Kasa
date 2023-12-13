@@ -1,11 +1,11 @@
 import Banner from "../components/Banner"
-import CollapseAbout from "../components/CollapseAbout"
+import Collapse from "../components/Collapse"
 
 export default function About() {
   return (
     <>
       <Banner isHome={false} />
-      <CollapseAbout />
+      <Collapse isAppartment={false} />
     </>
   )
 }

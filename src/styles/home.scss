@@ -1,5 +1,4 @@
 @use "_variables.scss" as vars;
-@use "_mixins.scss" as mixin;
 
 .home-content {
   display: flex;
@@ -24,7 +23,7 @@
 @media screen and (min-width: vars.$tablet) {
   .home-content {
     margin: 40px 60px 50px;
-    padding: 50px;
+    padding: 55px 50px 25px;
   }
 }
 
