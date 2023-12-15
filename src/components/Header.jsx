@@ -9,17 +9,13 @@ export default function Header() {
       <nav className="header-navigation">
         <NavLink
           to="/"
-          className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "active" : ""
-          }
+          className={({ isActive }) => (isActive ? "active" : "")}
         >
           Accueil
         </NavLink>
         <NavLink
           to="/a-propos"
-          className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "active" : ""
-          }
+          className={({ isActive }) => (isActive ? "active" : "")}
         >
           A Propos
         </NavLink>

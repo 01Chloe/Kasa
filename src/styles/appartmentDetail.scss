@@ -1,5 +1,6 @@
-@use "./variables.scss" as vars;
+@use "_variables.scss" as vars;
 @use "_mixins.scss" as mixin;
+@use "_functions.scss" as func;
 
 .appartment-details {
   color: vars.$primary-color;
@@ -11,7 +12,7 @@
       margin-bottom: 15px;
     }
     .appartment-detail-location {
-      font-size: calc(14px / vars.$fontSizeDefault) * 1rem;
+      font-size: func.convertToRem(14px);
     }
     .appartment-detail-tags {
       display: flex;
@@ -21,7 +22,7 @@
       .appartment-detail-tag {
         background-color: vars.$primary-color;
         color: vars.$very-light-color;
-        font-size: calc(10px / vars.$fontSizeDefault) * 1rem;
+        font-size: func.convertToRem(10px);
         padding: 5px 10px;
         border-radius: 10px;
         margin: 10px 10px 0 0;
@@ -72,7 +73,7 @@
       }
       .appartment-detail-tags {
         .appartment-detail-tag {
-          font-size: calc(14px / vars.$fontSizeDefault) * 1rem;
+          font-size: func.convertToRem(14px);
           padding: 10px 25px;
         }
       }

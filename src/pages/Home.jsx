@@ -7,13 +7,13 @@ export default function Home() {
   const appartmentsList = useFetchData("/data.json")
 
   return (
-    <>
+    <main>
       <Banner isHome={true} />
       <div className="home-content">
         {appartmentsList.map((item) => (
           <AppartmentCard key={item.id} item={item} />
         ))}
       </div>
-    </>
+    </main>
   )
 }

@@ -1,5 +1,6 @@
-@use "./variables.scss" as vars;
-@use "./mixins.scss" as mixin;
+@use "_variables.scss" as vars;
+@use "_mixins.scss" as mixin;
+@use "_functions.scss" as func;
 
 .collapses-container {
   .collapse-container {
@@ -10,9 +11,12 @@
       @include mixin.flexRowCenter;
       border-radius: 5px;
       padding: 10px;
-      font-size: calc(13px / vars.$fontSizeDefault) * 1rem;
       background-color: vars.$primary-color;
       color: vars.$very-light-color;
+      h2 {
+        font-size: func.convertToRem(13px);
+        font-weight: 500;
+      }
       .collapse-btn {
         border: none;
         background-color: transparent;

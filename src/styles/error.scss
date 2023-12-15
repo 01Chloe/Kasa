@@ -1,4 +1,5 @@
 @use "_variables.scss" as vars;
+@use "_functions.scss" as func;
 
 .error {
   color: vars.$primary-color;
@@ -16,7 +17,7 @@
     display: inline-block;
     margin-bottom: 113px;
     color: vars.$primary-color;
-    font-size: calc(14px / vars.$fontSizeDefault) * 1rem;
+    font-size: func.convertToRem(14px);
   }
 }
 

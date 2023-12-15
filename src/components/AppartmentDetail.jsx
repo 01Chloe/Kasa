@@ -14,14 +14,7 @@ export default function AppartmentDetail({ appartment }) {
 
     for (let i = 0; i < totalStars; i++) {
       const starImage = i < coloredStars ? RatingPink : RatingGrey
-      stars.push(
-        <img
-          key={i}
-          src={starImage}
-          alt={i < coloredStars ? "étoile rose" : "étoile grise"}
-          className="star"
-        />
-      )
+      stars.push(<img key={i} src={starImage} alt="" className="star" />)
     }
 
     return stars

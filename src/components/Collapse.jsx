@@ -71,7 +71,7 @@ export default function Collapse({ isAppartment, appartment = {} }) {
       {dataToUse.map((data, index) => (
         <div className="collapse-container" key={index}>
           <div className="collapse-title">
-            <p>{data.title}</p>
+            <h2>{data.title}</h2>
             <button
               className="collapse-btn"
               onClick={() => collapseToggle(data.collapseKey)}

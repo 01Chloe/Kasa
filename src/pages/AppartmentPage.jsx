@@ -18,10 +18,10 @@ export default function AppartmentPage() {
     return <Navigate to="/erreur" />
   }
   return (
-    <>
+    <main>
       <Gallery appartment={appartment} />
       <AppartmentDetail appartment={appartment} />
       <Collapse isAppartment={true} appartment={appartment} />
-    </>
+    </main>
   )
 }

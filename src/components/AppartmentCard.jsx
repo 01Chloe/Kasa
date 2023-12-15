@@ -10,7 +10,7 @@ export default function AppartmentCard({ item }) {
           alt={item.title}
           className="appartment-card-image"
         />
-        <p className="card-title">{item.title}</p>
+        <h2 className="card-title">{item.title}</h2>
       </article>
     </Link>
   )
