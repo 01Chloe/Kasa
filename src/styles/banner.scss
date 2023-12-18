@@ -29,6 +29,10 @@
     left: 15px;
     transform: translateY(-50%);
     font-weight: 400;
+    &.about {
+      position: absolute;
+      top: -9999px;
+    }
   }
 }
 

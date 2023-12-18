@@ -68,7 +68,9 @@
         margin-bottom: 30px;
       }
       .collapse-title {
-        font-size: 1.5rem;
+        h2 {
+          font-size: 1.5rem;
+        }
         .collapse-btn {
           .arrow-back {
             width: 32px;
@@ -116,7 +118,9 @@
   .collapses-container {
     .collapse-container {
       .collapse-title {
-        font-size: 2rem;
+        h2 {
+          font-size: 2rem;
+        }
       }
       .collapse-content {
         &.collapse-visible {

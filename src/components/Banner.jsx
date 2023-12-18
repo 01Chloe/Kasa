@@ -1,22 +1,14 @@
-import HomeBannerImg from "../assets/accueil-img.png"
-import AboutBannerImg from "../assets/a-propos_img.png"
 import "../styles/banner.scss"
 
-export default function Banner({ isHome }) {
+export default function Banner({ bannerDatas }) {
   return (
     <div className="banner">
       <img
-        src={isHome ? HomeBannerImg : AboutBannerImg}
-        alt={isHome ? "Océan et falaise" : "Paysage de montagnes"}
+        src={bannerDatas.image}
+        alt={bannerDatas.alt}
         className="banner-img"
       />
-      {isHome && (
-        <h1 className="banner-title">
-          Chez vous,&nbsp;
-          <br className="title-break" />
-          partout et ailleurs
-        </h1>
-      )}
+      {bannerDatas.title}
     </div>
   )
 }
