@@ -5,7 +5,7 @@ import CollapseContainer from "../components/CollapseContainer"
 import { Navigate, useParams } from "react-router-dom"
 
 export default function AppartmentPage() {
-  const appartmentsList = useFetchData("/data.json")
+  const appartmentsList = useFetchData(`${process.env.PUBLIC_URL}/data.json`)
 
   const { id } = useParams()
   const appartment = appartmentsList.find((appart) => appart.id === id)

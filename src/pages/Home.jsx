@@ -5,7 +5,7 @@ import HomeBannerImg from "../assets/accueil-img.png"
 import "../styles/home.scss"
 
 export default function Home() {
-  const appartmentsList = useFetchData("/data.json")
+  const appartmentsList = useFetchData(`${process.env.PUBLIC_URL}/data.json`)
 
   const homeBannerDatas = {
     image: HomeBannerImg,
