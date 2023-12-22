@@ -8,7 +8,7 @@ export default function Error() {
       <p className="error-parag">
         Oups! La page que vous demandez n'existe pas
       </p>
-      <Link to="/Kasa/" className="error-link">
+      <Link to="/Kasa" className="error-link">
         Retourner sur la page d'accueil
       </Link>
     </main>

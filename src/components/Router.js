@@ -7,7 +7,7 @@ import Error from "../pages/Error"
 export default function Router() {
   return (
     <Routes>
-      <Route path="/Kasa/" element={<Home />} />
+      <Route path="/Kasa" element={<Home />} />
       <Route path="/a-propos" element={<About />} />
       <Route path="/appartment/:id" element={<AppartmentPage />} />
       <Route path="/erreur" element={<Error />} />

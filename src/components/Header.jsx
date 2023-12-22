@@ -8,7 +8,7 @@ export default function Header() {
       <img src={Logo} alt="Logo Kasa" className="logo" />
       <nav className="header-navigation">
         <NavLink
-          to="/Kasa/"
+          to="/Kasa"
           className={({ isActive }) => (isActive ? "active" : "")}
         >
           Accueil
